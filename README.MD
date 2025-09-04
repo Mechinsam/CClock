@@ -1,4 +1,4 @@
-# CClock
+# TimeC
 ---
 Simple clock that displays the time in HH:MM:SS. Can print the time continously every second (may not be accurate).
 This is one of my first C projects since I have decided to try programming in it a bit (after giving up years ago) which is why the code is a bit messy..
