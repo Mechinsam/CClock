@@ -1,8 +1,18 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <time.h>
 #include <string.h>
 #include <stdbool.h>
+
+// load sleep function depending on operating system
+#include <stdio.h>
+
+#ifdef _WIN32
+	#include <windows.h>
+	#define SLEEP(s) Sleep((s) * 1000)
+#else
+	#include <unistd.h>
+	#define SLEEP(s) sleep(s)
+#endif
 
 bool continous = false;
 
@@ -23,6 +33,7 @@ int main(int argc, char *argv[])
 		else
 		{
 			printf("Unknown argument\n");
+			return 0;
 		}
 	}
 
@@ -49,7 +60,7 @@ int main(int argc, char *argv[])
 			break;
 		} else
 		{
-			sleep(1);
+			SLEEP(1);
 		}
 	}
 	
